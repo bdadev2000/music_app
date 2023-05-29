@@ -39,6 +39,7 @@ dependencies {
     def nav_version = "2.5.3"
     def lifecycle_version = "2.5.1"
     def koin_android_version = "3.4.0"
+    def preference_version = "1.2.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -60,4 +61,5 @@ dependencies {
     implementation "io.insert-koin:koin-android:$koin_android_version"
     implementation "io.insert-koin:koin-core:$koin_android_version"
 
+    implementation("androidx.preference:preference-ktx:$preference_version")
 }

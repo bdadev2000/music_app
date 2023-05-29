@@ -17,5 +17,9 @@ class MyApplication : Application() {
 
     companion object {
         private var instance: MyApplication? = null
+
+        fun getContext() : MyApplication{
+            return instance!!
+        }
     }
 }
