@@ -18,5 +18,5 @@ Room
 - View Model: Xử lý các logic
 - Adapter: Kết nối dữ liệu với các view item của một RecyclerView.
 
-# dependency injection:
+# Dependency injection:
 - Koin
