@@ -20,7 +20,7 @@ class SongFragment : Fragment() {
         songViewModel.getSongs().observe(viewLifecycleOwner, {
             if(it.isNotEmpty()){
                 for(i in it){
-                    Log.d("AAA", "===$it")
+                    Log.d("AAA", "===${i.title} ")
                 }
             }
         })

@@ -1,8 +1,9 @@
-package com.bdadev.musicplayer
+package com.bdadev.musicplayer.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import com.bdadev.musicplayer.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

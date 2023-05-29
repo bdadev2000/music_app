@@ -1,4 +1,4 @@
-package com.bdadev.musicplayer
+package com.bdadev.musicplayer.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
