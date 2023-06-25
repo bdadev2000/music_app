@@ -53,4 +53,5 @@ object PreferenceUtil {
 
     val isScreenOnEnabled get() = sharedPreferences.getBoolean(KEEP_SCREEN_ON, false)
 
+
 }
