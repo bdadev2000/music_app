@@ -1,4 +1,4 @@
-package com.bdadev.musicplayer.fragments.song
+package com.bdadev.musicplayer.fragments.songs
 
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +10,7 @@ import com.bdadev.musicplayer.R
 import com.bdadev.musicplayer.fragments.viewmodel.SongViewModel
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
-class SongFragment : Fragment() {
+class SongsFragment : Fragment() {
 
     private val songViewModel : SongViewModel by activityViewModel()
     override fun onCreateView(
@@ -24,7 +24,7 @@ class SongFragment : Fragment() {
                 }
             }
         })
-        return inflater.inflate(R.layout.fragment_song, container, false)
+        return inflater.inflate(R.layout.fragment_songs, container, false)
     }
 
 }

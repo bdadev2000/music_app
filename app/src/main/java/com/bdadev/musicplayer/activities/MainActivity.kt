@@ -1,11 +1,15 @@
 package com.bdadev.musicplayer.activities
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.contains
+import androidx.navigation.ui.setupWithNavController
 import com.bdadev.musicplayer.R
 import com.bdadev.musicplayer.activities.base.AbsCastActivity
+import com.bdadev.musicplayer.extensions.currentFragment
 import com.bdadev.musicplayer.extensions.findNavController
+import com.bdadev.musicplayer.interfaces.IScrollHelper
+import com.bdadev.musicplayer.model.CategoryInfo
 import com.bdadev.musicplayer.util.PreferenceUtil
 
 class MainActivity: AbsCastActivity() {
@@ -15,12 +19,11 @@ class MainActivity: AbsCastActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         setupNavigationController()
+        WhatsNewFragment.showChangeLog(this)
 
     }
 
-    ///TODO: Set up navigation
     private fun setupNavigationController() {
         val navController = findNavController(R.id.fragment_container)
         val navInflater = navController.navInflater
@@ -76,5 +79,12 @@ class MainActivity: AbsCastActivity() {
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean =
+        findNavController(R.id.fragment_container).navigateUp()
+    private fun saveTab(id: Int) {
+        if (PreferenceUtil.libraryCategory.firstOrNull { it.category.id == id }?.visible == true) {
+            PreferenceUtil.lastTab = id
+        }
+    }
 
 }
