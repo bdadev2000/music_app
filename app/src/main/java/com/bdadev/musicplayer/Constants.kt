@@ -6,6 +6,7 @@ import android.provider.MediaStore.MediaColumns.ALBUM_ARTIST
 
 object Constants {
     const val DATA = "_data"
+    const val TELEGRAM_CHANGE_LOG = "https://t.me/retromusiclog"
 
     const val SONG_SORT_ORDER = "song_sort_order"
     const val WHITELIST_MUSIC = "whitelist_music"
@@ -14,6 +15,11 @@ object Constants {
     const val LOCALE_AUTO_STORE_ENABLED = "locale_auto_store_enabled"
     const val TOGGLE_FULL_SCREEN = "toggle_full_screen"
     const val KEEP_SCREEN_ON = "keep_screen_on"
+    const val REMEMBER_LAST_TAB = "remember_last_tab"
+    const val LIBRARY_CATEGORIES = "library_categories"
+    const val LAST_USED_TAB = "last_used_tab"
+    const val TAB_TEXT_MODE = "tab_text_mode"
+    const val LAST_CHANGELOG_VERSION = "last_changelog_version"
 
     const val IS_MUSIC =
         MediaStore.Audio.AudioColumns.IS_MUSIC + "=1" + " AND " + MediaStore.Audio.AudioColumns.TITLE + " != ''"

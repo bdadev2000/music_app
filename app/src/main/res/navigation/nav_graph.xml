@@ -7,7 +7,8 @@
 
     <fragment
         android:id="@+id/songFragment"
-        android:name="com.bdadev.musicplayer.fragments.song.SongFragment"
+        android:name="com.bdadev.musicplayer.fragments.songs.SongsFragment"
         android:label="fragment_song"
-        tools:layout="@layout/fragment_song" />
+        tools:layout="@layout/fragment_songs" />
+
 </navigation>
