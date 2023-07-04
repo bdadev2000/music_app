@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
+    android:padding="@dimen/_16sdp"
     tools:context=".activities.PermissionActivity">
 
     <TextView
@@ -40,33 +41,90 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-            <Button
+
+            <LinearLayout
                 android:id="@+id/btn_access_storage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Access Storage"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider" />
+                android:background="@drawable/bg_button_primary"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_6sdp">
 
-            <Button
+                <ImageView
+                    android:id="@+id/check_img_in_storage"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/ic_check_default"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/access_storage"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <LinearLayout
                 android:id="@+id/btn_access_setting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Access Setting"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider" />
-            <Button
+                android:background="@drawable/bg_button_primary"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_6sdp"
+                android:visibility="gone"
+                >
+
+                <ImageView
+                    android:id="@+id/check_img_in_setting"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/ic_check_default"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/access_setting"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <LinearLayout
                 android:id="@+id/btn_let_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Let's start"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider" />
+                android:background="@drawable/bg_button_primary"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_6sdp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/let_start"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

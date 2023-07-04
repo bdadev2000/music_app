@@ -2,6 +2,7 @@ package com.bdadev.musicplayer.activities.base
 
 import android.Manifest
 import android.os.Bundle
+import android.util.Log
 import com.bdadev.musicplayer.R
 import com.bdadev.musicplayer.util.VersionUtils
 
@@ -10,8 +11,6 @@ abstract class AbsMusicServiceActivity : AbsBaseActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         setPermissionDeniedMessage(getString(R.string.permission_external_storage_denied))
     }
 
