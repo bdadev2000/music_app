@@ -21,4 +21,10 @@
     <string name="access_storage">Access Storage</string>
     <string name="access_setting">Access Setting</string>
     <string name="let_start">Let\'s start</string>
+    <string name="welcome">Welcome,</string>
+    <string name="user_name">User Name</string>
+    <string name="history">History</string>
+    <string name="last_added">Last added</string>
+    <string name="most_played">Most played</string>
+    <string name="shuffle">Shuffle</string>
 </resources>
