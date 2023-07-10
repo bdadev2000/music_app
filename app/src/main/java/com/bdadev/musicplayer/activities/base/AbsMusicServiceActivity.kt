@@ -4,10 +4,12 @@ import android.Manifest
 import android.os.Bundle
 import android.util.Log
 import com.bdadev.musicplayer.R
+import com.bdadev.musicplayer.interfaces.IMusicServiceEventListener
 import com.bdadev.musicplayer.util.VersionUtils
 
 abstract class AbsMusicServiceActivity : AbsBaseActivity(){
 
+    private val mMusicServiceEventListeners = ArrayList<IMusicServiceEventListener>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +18,18 @@ abstract class AbsMusicServiceActivity : AbsBaseActivity(){
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    fun addMusicServiceEventListener(listenerI: IMusicServiceEventListener?) {
+        if (listenerI != null) {
+            mMusicServiceEventListeners.add(listenerI)
+        }
+    }
+
+    fun removeMusicServiceEventListener(listenerI: IMusicServiceEventListener?) {
+        if (listenerI != null) {
+            mMusicServiceEventListeners.remove(listenerI)
+        }
     }
 
     override fun getPermissionsToRequest(): Array<String> {

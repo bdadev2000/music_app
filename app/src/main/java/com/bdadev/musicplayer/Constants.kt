@@ -20,6 +20,10 @@ object Constants {
     const val LAST_USED_TAB = "last_used_tab"
     const val TAB_TEXT_MODE = "tab_text_mode"
     const val LAST_CHANGELOG_VERSION = "last_changelog_version"
+    const val IGNORE_MEDIA_STORE_ARTWORK = "ignore_media_store_artwork"
+    const val SONG_GRID_SIZE = "song_grid_size"
+    const val SONG_GRID_SIZE_LAND = "song_grid_size_land"
+    const val SONG_GRID_STYLE = "song_grid_style"
 
     const val IS_MUSIC =
         MediaStore.Audio.AudioColumns.IS_MUSIC + "=1" + " AND " + MediaStore.Audio.AudioColumns.TITLE + " != ''"

@@ -3,6 +3,7 @@ package com.bdadev.musicplayer.util
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 import com.bdadev.musicplayer.Constants.FILTER_SONG
+import com.bdadev.musicplayer.Constants.IGNORE_MEDIA_STORE_ARTWORK
 import com.bdadev.musicplayer.Constants.KEEP_SCREEN_ON
 import com.bdadev.musicplayer.Constants.LANGUAGE_NAME
 import com.bdadev.musicplayer.Constants.LAST_CHANGELOG_VERSION
@@ -10,12 +11,18 @@ import com.bdadev.musicplayer.Constants.LAST_USED_TAB
 import com.bdadev.musicplayer.Constants.LIBRARY_CATEGORIES
 import com.bdadev.musicplayer.Constants.LOCALE_AUTO_STORE_ENABLED
 import com.bdadev.musicplayer.Constants.REMEMBER_LAST_TAB
+import com.bdadev.musicplayer.Constants.SONG_GRID_SIZE
+import com.bdadev.musicplayer.Constants.SONG_GRID_SIZE_LAND
+import com.bdadev.musicplayer.Constants.SONG_GRID_STYLE
 import com.bdadev.musicplayer.Constants.SONG_SORT_ORDER
 import com.bdadev.musicplayer.Constants.TAB_TEXT_MODE
 import com.bdadev.musicplayer.Constants.TOGGLE_FULL_SCREEN
 import com.bdadev.musicplayer.Constants.WHITELIST_MUSIC
+import com.bdadev.musicplayer.R
 import com.bdadev.musicplayer.application.MyApplication
+import com.bdadev.musicplayer.extensions.getIntRes
 import com.bdadev.musicplayer.extensions.getStringOrDefault
+import com.bdadev.musicplayer.fragments.GridStyle
 import com.bdadev.musicplayer.helper.SortOrder
 import com.bdadev.musicplayer.model.CategoryInfo
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -127,5 +134,42 @@ object PreferenceUtil {
         }
         set(value) = sharedPreferences.edit {
             putLong(LAST_CHANGELOG_VERSION, value)
+        }
+
+    val isIgnoreMediaStoreArtwork
+        get() = sharedPreferences.getBoolean(
+            IGNORE_MEDIA_STORE_ARTWORK,
+            false
+        )
+
+    var songGridSize
+        get() = sharedPreferences.getInt(
+            SONG_GRID_SIZE,
+            MyApplication.getContext().getIntRes(R.integer.default_list_columns)
+        )
+        set(value) = sharedPreferences.edit {
+            putInt(SONG_GRID_SIZE, value)
+        }
+    var songGridSizeLand
+        get() = sharedPreferences.getInt(
+            SONG_GRID_SIZE_LAND,
+            MyApplication.getContext().getIntRes(R.integer.default_grid_columns_land)
+        )
+        set(value) = sharedPreferences.edit {
+            putInt(SONG_GRID_SIZE_LAND, value)
+        }
+
+    var songGridStyle: GridStyle
+        get() {
+            val id: Int = sharedPreferences.getInt(SONG_GRID_STYLE, 0)
+            // We can directly use "first" kotlin extension function here but
+            // there maybe layout id stored in this so to avoid a crash we use
+            // "firstOrNull"
+            return GridStyle.values().firstOrNull { gridStyle ->
+                gridStyle.id == id
+            } ?: GridStyle.Grid
+        }
+        set(value) = sharedPreferences.edit {
+            putInt(SONG_GRID_STYLE, value.id)
         }
 }

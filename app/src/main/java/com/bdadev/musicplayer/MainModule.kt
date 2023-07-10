@@ -1,5 +1,6 @@
 package com.bdadev.musicplayer
 
+import com.bdadev.musicplayer.fragments.LibraryViewModel
 import com.bdadev.musicplayer.fragments.viewmodel.SongViewModel
 import com.bdadev.musicplayer.repository.RealRepository
 import com.bdadev.musicplayer.repository.RealSongRepository
@@ -24,6 +25,9 @@ private val dataModule = module {
 }
 
 private val viewModules = module {
+    viewModel {
+        LibraryViewModel(get())
+    }
 
     viewModel {
         SongViewModel(get())
